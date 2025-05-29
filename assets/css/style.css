@@ -1,0 +1,143 @@
+/* Styles généraux */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Header */
+header {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-weight: 700;
+}
+
+/* Cards */
+.card {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    border-radius: 8px 8px 0 0 !important;
+}
+
+/* Boutons */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+/* Formulaires */
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Tickets */
+.ticket-card {
+    height: 100%;
+}
+
+.ticket-card .card-footer {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.ticket-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #28a745;
+}
+
+.ticket-location {
+    color: #6c757d;
+}
+
+.ticket-date {
+    font-weight: 500;
+    color: #007bff;
+}
+
+.ticket-status {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.ticket-status.national {
+    background-color: #007bff;
+    color: white;
+}
+
+.ticket-status.international {
+    background-color: #28a745;
+    color: white;
+}
+
+/* Footer */
+footer {
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Admin dashboard */
+.admin-dashboard .card {
+    border-left: 4px solid #007bff;
+}
+
+.admin-dashboard .card.tickets {
+    border-left-color: #28a745;
+}
+
+.admin-dashboard .card.users {
+    border-left-color: #ffc107;
+}
+
+.admin-dashboard .card.orders {
+    border-left-color: #dc3545;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+    }
+    
+    .nav-item {
+        margin-bottom: 5px;
+    }
+}
