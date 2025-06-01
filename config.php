@@ -2,7 +2,7 @@
 $host = 'localhost'; 
 $db   = 'ticketmaster'; 
 $user = 'ilyes'; 
-$pass = 'TonMotDePasseFort'; 
+$pass = 'server'; 
 
 try { 
     $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user, $pass); 
