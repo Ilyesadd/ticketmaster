@@ -58,13 +58,14 @@ CREATE TABLE `orders` (
 --
 
 CREATE TABLE `tickets` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `user_id` int DEFAULT NULL,
   `event_name` varchar(100) NOT NULL,
   `event_date` datetime NOT NULL,
   `location` varchar(100) NOT NULL,
   `price` decimal(10,2) NOT NULL,
-  `status` enum('National','International') NOT NULL DEFAULT 'National'
+  `status` enum('National','International') NOT NULL DEFAULT 'National',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 
 --
@@ -107,11 +108,13 @@ CREATE TABLE `ticket_messages` (
 --
 
 CREATE TABLE `users` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `is_admin` tinyint(1) DEFAULT '0'
+  `is_admin` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB;
 
 --
@@ -133,7 +136,6 @@ INSERT INTO `users` (`id`, `username`, `password`, `email`, `is_admin`) VALUES
 -- Index pour la table `messages`
 --
 ALTER TABLE `messages`
-  ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`);
 
 --
@@ -148,15 +150,11 @@ ALTER TABLE `orders`
 -- Index pour la table `tickets`
 --
 ALTER TABLE `tickets`
-  ADD PRIMARY KEY (`id`),
   ADD KEY `user_id` (`user_id`);
 
 --
 -- Index pour la table `users`
 --
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
