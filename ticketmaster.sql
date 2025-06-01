@@ -31,7 +31,7 @@ CREATE TABLE `messages` (
   `id` int NOT NULL,
   `user_id` int DEFAULT NULL,
   `name` varchar(100) NOT NULL,
-  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET NOT NULL,
   `message` text NOT NULL,
   `status` enum('unread','read') NOT NULL DEFAULT 'unread',
   `sent_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
