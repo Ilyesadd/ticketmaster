@@ -77,29 +77,8 @@ INSERT INTO `tickets` (`id`, `user_id`, `event_name`, `event_date`, `location`, 
 (5, NULL, 'Paris', '2025-03-02 00:00:00', 'Paris', 98.00, 'International'),
 (6, NULL, 'Paris', '2025-03-08 00:00:00', 'Paris', 89.00, 'International'),
 (7, NULL, 'Paris', '2025-03-08 00:00:00', 'Paris', 989.00, 'National');
+pmm
 
--- --------------------------------------------------------
-
---
--- Structure de la table `ticket_messages`
---
-
-CREATE TABLE `ticket_messages` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `ticket_id` int NOT NULL,
-  `sender_id` int NOT NULL,
-  `receiver_id` int NOT NULL,
-  `message` text NOT NULL,
-  `status` enum('unread','read') NOT NULL DEFAULT 'unread',
-  `sent_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  KEY `ticket_id` (`ticket_id`),
-  KEY `sender_id` (`sender_id`),
-  KEY `receiver_id` (`receiver_id`),
-  CONSTRAINT `ticket_messages_ibfk_1` FOREIGN KEY (`ticket_id`) REFERENCES `tickets` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `ticket_messages_ibfk_2` FOREIGN KEY (`sender_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `ticket_messages_ibfk_3` FOREIGN KEY (`receiver_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB;
 
 -- --------------------------------------------------------
 
@@ -206,6 +185,30 @@ ALTER TABLE `orders`
 --
 ALTER TABLE `tickets`
   ADD CONSTRAINT `tickets_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `ticket_messages`
+--
+
+CREATE TABLE `ticket_messages` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `ticket_id` int NOT NULL,
+  `sender_id` int NOT NULL,
+  `receiver_id` int NOT NULL,
+  `message` text NOT NULL,
+  `status` enum('unread','read') NOT NULL DEFAULT 'unread',
+  `sent_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `ticket_id` (`ticket_id`),
+  KEY `sender_id` (`sender_id`),
+  KEY `receiver_id` (`receiver_id`),
+  CONSTRAINT `ticket_messages_ibfk_1` FOREIGN KEY (`ticket_id`) REFERENCES `tickets` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `ticket_messages_ibfk_2` FOREIGN KEY (`sender_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `ticket_messages_ibfk_3` FOREIGN KEY (`receiver_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB;
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
