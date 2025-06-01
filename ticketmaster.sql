@@ -28,13 +28,14 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `messages` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `user_id` int DEFAULT NULL,
   `name` varchar(100) NOT NULL,
-  `email` varchar(255) CHARACTER SET NOT NULL,
+  `email` varchar(255) NOT NULL,
   `message` text NOT NULL,
   `status` enum('unread','read') NOT NULL DEFAULT 'unread',
-  `sent_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `sent_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 
 -- --------------------------------------------------------
