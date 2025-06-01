@@ -77,7 +77,6 @@ INSERT INTO `tickets` (`id`, `user_id`, `event_name`, `event_date`, `location`, 
 (5, NULL, 'Paris', '2025-03-02 00:00:00', 'Paris', 98.00, 'International'),
 (6, NULL, 'Paris', '2025-03-08 00:00:00', 'Paris', 89.00, 'International'),
 (7, NULL, 'Paris', '2025-03-08 00:00:00', 'Paris', 989.00, 'National');
-pmm
 
 
 -- --------------------------------------------------------
