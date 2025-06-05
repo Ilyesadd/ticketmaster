@@ -8,11 +8,11 @@
             <div class="col-md-4">
                 <h5>Liens utiles</h5>
                 <ul class="list-unstyled">
-                    <li><a href="/Ticket/tickets/index.php" class="text-white">Accueil</a></li>
-                    <li><a href="/Ticket/tickets/add.php" class="text-white">Vendre un ticket</a></li>
+                    <li><a href="../tickets/index.php" class="text-white">Accueil</a></li>
+                    <li><a href="../tickets/add.php" class="text-white">Vendre un ticket</a></li>
                     <?php if (!isset($_SESSION['user_id'])): ?>
-                        <li><a href="/Ticket/auth/login.php" class="text-white">Connexion</a></li>
-                        <li><a href="/Ticket/auth/register.php" class="text-white">Inscription</a></li>
+                        <li><a href="../auth/login.php" class="text-white">Connexion</a></li>
+                        <li><a href="../auth/register.php" class="text-white">Inscription</a></li>
                     <?php endif; ?>
                 </ul>
             </div>

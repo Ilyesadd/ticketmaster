@@ -18,10 +18,7 @@ try {
     $stmt = getPDO()->query('SELECT COUNT(*) FROM users');
     $total_users = $stmt->fetchColumn();
     
-    // Nombre total de commandes
-    $stmt = getPDO()->query('SELECT COUNT(*) FROM orders');
-    $total_orders = $stmt->fetchColumn();
-    
+
     // Nombre de messages non lus
     $stmt = getPDO()->query("SELECT COUNT(*) FROM messages WHERE status = 'unread'");
     $unread_messages = $stmt->fetchColumn();
@@ -76,19 +73,10 @@ try {
                     <div class="card-body">
                         <h5 class="card-title"><i class="bi bi-people"></i> Utilisateurs</h5>
                         <p class="card-text display-4"><?php echo $total_users; ?></p>
-                        <a href="users.php" class="btn btn-warning">Gérer les utilisateurs</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card text-center mb-3 orders">
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="bi bi-cart"></i> Commandes</h5>
-                        <p class="card-text display-4"><?php echo $total_orders; ?></p>
-                        <a href="orders.php" class="btn btn-success">Voir les commandes</a>
-                    </div>
-                </div>
-            </div>
+
             <div class="col-md-3">
                 <div class="card text-center mb-3 messages">
                     <div class="card-body">
