@@ -38,7 +38,7 @@ if ($status_filter && in_array($status_filter, ['National', 'International'])) {
     <div class="container mt-5">
         <div class="row mb-4">
             <div class="col-md-8">
-                <h2>Tickets disponiblesssss</h2>
+                <h2>Tickets disponibles</h2>
             </div>
             <div class="col-md-4 text-end">
                 <div class="btn-group">
