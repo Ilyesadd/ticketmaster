@@ -38,18 +38,7 @@ CREATE TABLE `messages` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 
--- --------------------------------------------------------
 
---
--- Structure de la table `orders`
---
-
-CREATE TABLE `orders` (
-  `id` int NOT NULL,
-  `user_id` int DEFAULT NULL,
-  `ticket_id` int DEFAULT NULL,
-  `purchase_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB;
 
 -- --------------------------------------------------------
 
@@ -116,13 +105,7 @@ INSERT INTO `users` (`id`, `username`, `password`, `email`, `is_admin`) VALUES
 ALTER TABLE `messages`
   ADD KEY `user_id` (`user_id`);
 
---
--- Index pour la table `orders`
---
-ALTER TABLE `orders`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `user_id` (`user_id`),
-  ADD KEY `ticket_id` (`ticket_id`);
+
 
 --
 -- Index pour la table `tickets`
@@ -144,11 +127,7 @@ ALTER TABLE `tickets`
 ALTER TABLE `messages`
   MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
---
--- AUTO_INCREMENT pour la table `orders`
---
-ALTER TABLE `orders`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+
 
 --
 -- AUTO_INCREMENT pour la table `tickets`
@@ -172,12 +151,7 @@ ALTER TABLE `users`
 ALTER TABLE `messages`
   ADD CONSTRAINT `messages_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL;
 
---
--- Contraintes pour la table `orders`
---
-ALTER TABLE `orders`
-  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
-  ADD CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`ticket_id`) REFERENCES `tickets` (`id`);
+
 
 --
 -- Contraintes pour la table `tickets`

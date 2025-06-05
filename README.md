@@ -2,7 +2,7 @@
 
 ## Description
 
-TicketMaster est une application web PHP permettant aux utilisateurs de mettre en vente et d'acheter des tickets pour divers événements. L'application dispose d'un système d'authentification, d'une gestion des tickets et d'un panneau d'administration pour les modérateurs.
+TicketMaster est une application web PHP permettant aux utilisateurs de mettre en vente des tickets pour divers événements. L'application dispose d'un système d'authentification, d'une gestion des tickets et d'un panneau d'administration pour les modérateurs.
 
 ## Fonctionnalités
 
@@ -21,7 +21,6 @@ La base de données comprend les tables suivantes :
 
 - **users** : Stocke les informations des utilisateurs (identifiants, emails, mots de passe)
 - **tickets** : Contient les détails des tickets mis en vente
-- **orders** : Enregistre les achats de tickets
 - **messages** : Permet la communication entre utilisateurs
 
 ## Installation

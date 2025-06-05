@@ -41,22 +41,7 @@ try {
         $redirect_to_admin = true;
     }
     
-    // Vérification s'il y a des commandes liées à ce ticket
-    $stmt = getPDO()->prepare('SELECT COUNT(*) FROM orders WHERE ticket_id = ?');
-    $stmt->execute([$ticket_id]);
-    $order_count = $stmt->fetchColumn();
-    
-    if ($order_count > 0) {
-        // Il y a des commandes liées, on ne peut pas supprimer
-        $_SESSION['error_message'] = 'Ce ticket ne peut pas être supprimé car il est lié à des commandes.';
-        
-        if ($redirect_to_admin) {
-            header('Location: ../admin/tickets.php');
-        } else {
-            header('Location: my_tickets.php');
-        }
-        exit;
-    }
+    // La vérification des commandes liées a été supprimée car la table orders n'existe plus
     
     // Suppression du ticket
     $stmt = getPDO()->prepare('DELETE FROM tickets WHERE id = ?');

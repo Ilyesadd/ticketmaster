@@ -127,9 +127,7 @@ footer a:hover {
     border-left-color: #ffc107;
 }
 
-.admin-dashboard .card.orders {
-    border-left-color: #dc3545;
-}
+
 
 /* Responsive */
 @media (max-width: 768px) {
